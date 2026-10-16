@@ -1,0 +1,16 @@
+{
+    "name": "systemd",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "remoteUser": "vscode",
+    "overrideCommand": false, // keep systemd as PID 1
+    "init": false, // tini would take PID 1 and break systemd
+    "privileged": true,
+    "runArgs": [
+        "--cgroupns=host",
+        "--tmpfs=/run",
+        "--tmpfs=/run/lock",
+        "--stop-signal=SIGRTMIN+3"
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Codespace with systemd",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "overrideCommand": false,
+    "privileged": true
+    // "runArgs": [
+    //     "--cgroupns=host",
+    //     "--tmpfs",
+    //     "/run",
+    //     "--tmpfs",
+    //     "/run/lock",
+    //     "--stop-signal=SIGRTMIN+3"
+    // ],
+    // "mounts": [
+    //     "source=/sys/fs/cgroup,target=/sys/fs/cgroup,type=bind"
+    // ]
+}
