@@ -14,9 +14,9 @@ pg() {
 }
 
 # echo "==> install nginx"
-# apt-get update -qq
-# apt-get install -y nginx
-# systemctl enable --now nginx
+apt-get update -qq
+apt-get install -y nginx
+systemctl enable --now nginx
 
 echo "==> add PGDG repo + install postgresql-${PG_VERSION}"
 apt-get install -y postgresql-common ca-certificates
@@ -63,3 +63,5 @@ pg -d "${DB}" -c '\dt'
 
 echo "==> records in todo"
 pg -d "${DB}" -c 'SELECT * FROM todo ORDER BY id;'
+
+echo "==> COMPLETE"
